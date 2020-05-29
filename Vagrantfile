@@ -1,5 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-20.04"
+  config.vm.hostname = "sandbox"
 
   config.vm.network "public_network"
 
@@ -13,4 +14,8 @@ Vagrant.configure("2") do |config|
      apt-get update
      apt-get install -y neovim gcc net-tools
   SHELL
+
+  Dir.glob("provision/*.sh").each do |script|
+    config.vm.provision "shell", path: script
+  end
 end
