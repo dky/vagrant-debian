@@ -1,8 +1,9 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-20.04"
+  config.vm.box_check_update = false
   config.vm.hostname = "sandbox"
 
-  config.vm.network "public_network"
+  config.vm.network "public_network", :bridge => "en0: Wi-Fi (AirPort)", ip: "192.168.1.10"
 
   config.vm.provider "virtualbox" do |v|
     v.name = "sandbox"
