@@ -3,7 +3,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_check_update = true
   config.vm.hostname = "sandbox"
 
-  config.vm.network "public_network", :bridge => "en0: Wi-Fi (Wireless)", ip: "192.168.1.10"
+  config.vm.network "public_network", :bridge => "en0: Wi-Fi (AirPort)", ip: "192.168.1.10"
 
   config.vm.provider "virtualbox" do |v|
     v.name = "sandbox"
