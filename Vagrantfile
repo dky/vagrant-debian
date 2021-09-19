@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
      apt-get update
-     apt-get install -y neovim gcc net-tools
+     apt-get install -y gcc net-tools
   SHELL
 
   Dir.glob("provision/*.sh").each do |script|

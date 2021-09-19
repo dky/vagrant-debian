@@ -1,2 +1,4 @@
 .vagrant
 private_bootstrap.sh
+git
+tmp
