@@ -9,6 +9,7 @@ if [ -d "$GODIR" ];
 then
 	echo "Go is already installed"
 else 
-	sudo wget $URL -O - | tar -xz -C /tmp
+	echo "Downloading Go $VERSION and extracting + installing"
+	sudo wget -q $URL -O - | tar -xz -C /tmp
 	sudo mv /tmp/go /usr/local/
 fi
