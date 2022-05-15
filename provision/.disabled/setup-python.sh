@@ -12,8 +12,8 @@ else
 	export PYENV_ROOT="$HOME/.pyenv"
 	export PATH="$PYENV_ROOT/bin:$PATH"
 
-	pyenv install 3.9.7
-	pyenv global 3.9.7
+	pyenv install 3.10.4
+	pyenv global 3.10.4
 
 	$HOME/.pyenv/shims/pip install --upgrade pip
 	$HOME/.pyenv/shims/pip install --user pynvim
