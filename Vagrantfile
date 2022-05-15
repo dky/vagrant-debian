@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-20.04"
+  config.vm.box = "bento/debian-11"
   config.vm.box_check_update = true
   config.vm.hostname = "sandbox"
 
@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |v|
     v.name = "sandbox"
-    v.memory = 2048
-    v.cpus = 2
+    v.memory = 3096
+    v.cpus = 4
   end
 
   config.vm.provision "shell", inline: <<-SHELL
