@@ -17,4 +17,5 @@ else
 
 	$HOME/.pyenv/shims/pip install --upgrade pip
 	$HOME/.pyenv/shims/pip install --user pynvim
+	$HOME/.pyenv/shims/pip install --user python-lsp-server
 fi
