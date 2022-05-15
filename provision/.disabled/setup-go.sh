@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=1.17.1
+VERSION=1.18.2
 URL=https://dl.google.com/go/go$VERSION.linux-amd64.tar.gz
 
 GODIR=/usr/local/go
