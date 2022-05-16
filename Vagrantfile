@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
      apt-get update
-     apt-get install -y gcc net-tools ripgrep git tmux strace htop sar jq
+     apt-get install -y gcc net-tools ripgrep git tmux strace htop sysstat jq
   SHELL
 
   Dir.glob("provision/*.sh").each do |script|
