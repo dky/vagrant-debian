@@ -10,6 +10,6 @@ then
 	echo "Go is already installed"
 else 
 	echo "Downloading Go $VERSION and extracting + installing"
-	sudo wget -q $URL -O - | tar -xz -C /tmp
+	wget -q $URL -O - | tar -xz -C /tmp
 	sudo mv /tmp/go /usr/local/
 fi
