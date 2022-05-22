@@ -16,9 +16,9 @@ Vagrant.configure("2") do |config|
      apt-get install -y gcc net-tools ripgrep git tmux strace htop sysstat jq ltrace
   SHELL
 
-  Dir.glob("provision/*.sh").each do |script|
-    config.vm.provision "shell", path: script
-  end
+  #Dir.glob("provision/*.sh").each do |script|
+    #config.vm.provision "shell", path: script
+  #end
 
-  config.vm.synced_folder "/Users/dky/git", "/home/dky/git"
+  config.vm.synced_folder "/Users/dky/git", "/home/vagrant/git"
 end
