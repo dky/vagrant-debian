@@ -19,4 +19,7 @@ Vagrant.configure("2") do |config|
   Dir.glob("provision/*.sh").each do |script|
     config.vm.provision "shell", path: script
   end
+
+  config.vm.synced_folder "/Users/dky/git", "/home/dky/git"
+  config.vm.synced_folder "/Users/dky/.ssh", "/home/dky/.ssh"
 end
