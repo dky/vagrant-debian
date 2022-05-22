@@ -21,5 +21,4 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder "/Users/dky/git", "/home/dky/git"
-  config.vm.synced_folder "/Users/dky/.ssh", "/home/dky/.ssh"
 end
