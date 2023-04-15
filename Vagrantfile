@@ -1,24 +1,21 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/debian-11"
-  config.vm.box_check_update = true
+  config.vm.box = "starboard/ubuntu-arm64-20.04.5"
+  config.vm.box_version = "20221120.20.40.0"
   config.vm.hostname = "sandbox"
 
-  config.vm.network "public_network", :bridge => "en0: Wi-Fi (AirPort)", ip: "192.168.1.10"
-
-  config.vm.provider "virtualbox" do |v|
-    v.name = "sandbox"
-    v.memory = 3096
-    v.cpus = 4
+  config.vm.provider "vmware_desktop" do |v|
+      v.ssh_info_public = true
+      v.gui = true
+      v.linked_clone = false
+      v.vmx["ethernet0.virtualdev"] = "vmxnet3"
+      v.memory = 8192
+      v.cpus = 4
   end
 
   config.vm.provision "shell", inline: <<-SHELL
      apt-get update
      apt-get install -y gcc net-tools ripgrep git tmux strace htop sysstat jq ltrace
   SHELL
-
-  #Dir.glob("provision/*.sh").each do |script|
-    #config.vm.provision "shell", path: script
-  #end
 
   config.vm.synced_folder "/Users/dky/git", "/home/vagrant/git"
 end
