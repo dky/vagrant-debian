@@ -17,5 +17,4 @@ Vagrant.configure("2") do |config|
      apt-get install -y gcc net-tools ripgrep git tmux strace htop sysstat jq ltrace
   SHELL
 
-  config.vm.synced_folder "/Users/dky/git", "/home/vagrant/git"
 end
