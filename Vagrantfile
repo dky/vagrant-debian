@@ -1,6 +1,7 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "starboard/ubuntu-arm64-20.04.5"
-  config.vm.box_version = "20221120.20.40.0"
+
+  config.vm.box = "dky/ubuntu"
+  config.vm.box_version = "0.0.2"
   config.vm.hostname = "sandbox"
 
   config.vm.provider "vmware_desktop" do |v|
@@ -13,8 +14,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-     apt-get update
-     apt-get install -y gcc net-tools ripgrep git tmux strace htop sysstat jq ltrace
+     apt-get -y update && apt-get -y upgrade
+     apt-get install -y gcc g++ net-tools ripgrep git tmux strace htop sysstat jq ltrace
   SHELL
 
 end

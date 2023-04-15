@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NVIM_VERSION=v0.7.0
+NVIM_VERSION=v0.9.0
 
 mkdir ~/bin ~/tmp
 wget -O ~/tmp/nvim.tar.gz  https://github.com/neovim/neovim/releases/download/$NVIM_VERSION/nvim-linux64.tar.gz
